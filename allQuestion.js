@@ -29,19 +29,24 @@ console.log("3.", a3);
 // ### 4. Classroom Attendance Check
 // A class records names of students present for each period. Determine which distinct students attended at least once.
 const q4 = [["Asha", "Ravi", "Neel"], ["Ravi"], ["Asha", "Meera"]];
-const a4 = q4
+const a4 = q4.flat().reduce((reduced, current) => {
+  if (!(reduced.includes(current))) {
+    reduced.push(current);
+  }
+  return reduced;
+}, [])
 console.log("4.", a4);
 
 // ### 5. Candy Jar Stocking
 // A store logs candy refills like this. Find the total number of candies added.
 const q5 = [[5, 3], [2], [4, 1]];
-const a5 = q5
+const a5 = q5.flat().reduce((reduced, current) => reduced + current, 0)
 console.log("5.", a5);
 
 // ### 6. Music Rehearsal Notes
 // Choir groups practice with sequences. Check whether **any** group sang `"do"`.
 const q6 = [["mi", "fa", "so"], ["do", "mi"], ["fa"]];
-const a6 = q6
+const a6 = q6.some(val => val.includes('do'));
 console.log("6.", a6);
 
 // ### 7. Weather Sensor Validation
