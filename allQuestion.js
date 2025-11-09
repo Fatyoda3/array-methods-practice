@@ -229,7 +229,7 @@ console.log("28.", a28);
 // ### 29. Rainfall Data Check
 // Measurements. Check if all values are positive.
 const q29 = [[3, 4], [5, 2], [1]];
-const a29 = q29
+const a29 = q29.every((val) => val.every(el => el >= 0));
 console.log("29.", a29);
 
 // ### 30. Fruit Stand Weight Totals
