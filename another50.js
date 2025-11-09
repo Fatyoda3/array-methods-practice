@@ -167,7 +167,9 @@ console.log("69.", a69);
 
 // ### 70. Combine Color Swatches
 // Combine all color swatches from three design sets.
-const q70 = [['red', 'green', 'blue'], ['red', 'orange', 'purple'], ['red', 'green', 'violet']];
+const q70 = [['red', 'green', 'blue'],
+['red', 'orange', 'purple'],
+['red', 'green', 'violet']];
 const a70 = q70.flat().reduce((combined, current) => {
   if (!(combined.includes(current))) {
     combined.push(current);
@@ -178,8 +180,8 @@ console.log("70.", a70);
 
 // ### 71. Maximum Threshold Check
 // Check if any experiment reading hit the maximum threshold of 100.
-const q71 = 
-const a71 = q71
+const q71 = [[1, 44, 5, 4, 32, 2], [12, 33, 50], [2, 46, 67, 100]]
+const a71 = q71.some(vals => vals.some(val => val === 100));
 console.log("71.", a71);
 
 // ### 72. Completion Verification
