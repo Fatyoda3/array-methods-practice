@@ -305,14 +305,17 @@ console.log("80.", a80);
 
 // ### 81. Reverse Instructions
 // Reverse the order of instructions written for a scavenger hunt.
-const q81 = 
-const a81 = q81
+const q81 = [['run', 'dig', 'peek'], ['dig', 'bury', 'cross'], ['choose', 'switch', 'find']];
+const a81 = q81.flat().reduce((reversed, current) => {
+  reversed.unshift(current);
+  return reversed;
+}, [])
 console.log("81.", a81);
 
 // ### 82. Journal Mention Count
 // Count how many entries in a journal mention “rain”.
-const q82 = 
-const a82 = q82
+const q82 = [['rain', 'drought', 'tornado'], ['flood', 'tsunami', 'typhoon'], ['flood', 'rain']];
+const a82 = q82.flat().reduce((rainCount, current) => current === 'rain' ? rainCount + 1 : rainCount, 0);
 console.log("82.", a82);
 
 // ### 83. Merge Poetry Fragments
