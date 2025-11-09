@@ -68,8 +68,13 @@ console.log("59.", a59);
 
 // ### 60. Unique Ice Cream Flavors
 // List unique flavors tried in an ice-cream tasting event.
-const q60 = [['vanilla', 'truffle', 'blue-berry', 'butter-scotch', 'mint', 'chocolate', 'strawberry', 'caramel']]
-const a60 = q60
+const q60 = [['vanilla', 'truffle', 'blue-berry', 'strawberry', 'caramel'], ['blue-berry', 'strawberry', 'caramel'], ['butter-scotch', 'mint', 'chocolate',], ['strawberry', 'caramel'], ['mint', 'chocolate',]]
+const a60 = q60.flat().reduce((uniqueFlavors, current) => {
+  if (!(uniqueFlavors.includes(current))) {
+    uniqueFlavors.push(current);
+  }
+  return uniqueFlavors;
+}, []);
 console.log("60.", a60);
 
 // ### 61. High Score Check
