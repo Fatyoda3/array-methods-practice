@@ -45,7 +45,8 @@ console.log("56.", a56);
 
 // ### 57. Unique Bird Species
 // Create a list of all unique bird species spotted on a trip.
-const q57 = [['night angel', 'crow', 'swan'], ['flamingo', 'parrot', 'sparrow'], ['ostrich', 'Kori Bustard'], ['duck', 'dodo']];
+const q57 = [['night angel', 'crow', 'swan'], ['flamingo', 'parrot', 'sparrow'],
+['ostrich', 'Kori Bustard'], ['duck', 'dodo']];
 const a57 = q57.flat().reduce((uniqueSightings, current) => {
   if (!(uniqueSightings.includes(current))) {
     uniqueSightings.push(current);
@@ -134,26 +135,45 @@ console.log("66.", a66);
 
 // ### 67. Parcel Weight Sum
 // Sum all weights of parcels recorded in a courier office.
-const q67 = 
-const a67 = q67
+const q67 = [[22, 23], [25, 24, 22], [29]];
+const a67 = q67.flat().reduce((total, val) => total + val, 0)
 console.log("67.", a67);
 
 // ### 68. Distinct Pizza Toppings
 // List distinct toppings chosen by pizza customers.
-const q68 = 
-const a68 = q68
+const q68 = [['onion', 'capsicum', 'pepperoni', 'olives'],
+['chives', 'mushroom', 'pineapple'],
+['chives', 'pepperoni', 'olives', 'pineapple'],
+['capsicum', 'pepperoni', 'olives']];
+const a68 = q68.flat().reduce((uniqueToppings, current) => {
+  if (!(uniqueToppings.includes(current))) {
+    uniqueToppings.push(current);
+  }
+  return uniqueToppings;
+}, []);
 console.log("68.", a68);
 
 // ### 69. Chapter Reread Count
 // Count how many times a student reread a particular chapter.
-const q69 = 
-const a69 = q69
+const q69 = [['onion', 'capsicum', 'pepperoni', 'olives'],
+['chives', 'mushroom', 'pineapple'],
+['chives', 'pepperoni', 'olives', 'pineapple'],
+['capsicum', 'pepperoni', 'olives']];
+const a69 = q69.flat().reduce((rereads, chapters) =>
+  chapters === 'pepperoni' ?
+    rereads + 1 : rereads, 0);
+
 console.log("69.", a69);
 
 // ### 70. Combine Color Swatches
 // Combine all color swatches from three design sets.
-const q70 = 
-const a70 = q70
+const q70 = [['red', 'green', 'blue'], ['red', 'orange', 'purple'], ['red', 'green', 'violet']];
+const a70 = q70.flat().reduce((combined, current) => {
+  if (!(combined.includes(current))) {
+    combined.push(current);
+  }
+  return combined;
+}, []);
 console.log("70.", a70);
 
 // ### 71. Maximum Threshold Check
