@@ -115,13 +115,18 @@ console.log("14.", a14);
 // ### 15. Wildlife Sighting Count
 // Animal sightings. Count how many times “deer” was seen.
 const q15 = ["deer", "deer", "rabbit", "deer"];
-const a15 = q15.
-  console.log("15.", a15);
+const a15 = q15.reduce((sightings, animal) => animal === 'deer' ? sightings + 1 : sightings, 0);
+console.log("15.", a15);
 
 // ### 16. Study Group Completion
 // Study groups finish chapters. Find all chapters completed by any group.
 const q16 = [[1, 2], [3], [2, 4, 1]];
-const a16 = q16
+const a16 = q16.reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, [])
 console.log("16.", a16);
 
 // ### 17. Dance Class Steps
