@@ -79,14 +79,14 @@ console.log("60.", a60);
 
 // ### 61. High Score Check
 // Check if any participant scored above 90 in tests.
-const q61 = 
-const a61 = q61
+const q61 = [[1, 44, 5, 2], [99, 50], [2, 46, 67, 43]]
+const a61 = q61.flat().some((val) => val > 90);
 console.log("61.", a61);
 
 // ### 62. Age Restriction Validation
 // Verify if all ages listed for an event are 18 or above.
-const q62 = 
-const a62 = q62
+const q62 = [[1, 44, 5, 2], [99, 50], [2, 46, 67, 43]]
+const a62 = q62.flat().every((val) => val > 17);
 console.log("62.", a62);
 
 // ### 63. Combined Recipe Ingredients
