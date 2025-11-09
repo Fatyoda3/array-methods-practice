@@ -8,9 +8,8 @@ console.log("1.", a1);
 // A stargazing club logs visible constellations from each night. Combine everyone’s observations into one list of all constellations spotted.
 const q2 = [["Orion", "Leo"], ["Taurus"], ["Orion", "Gemini"]];
 const a2 = q2.flat().reduce((reduced, current) => {
-
   if (!(reduced.includes(current))) {
-    reduced.push(current)
+    reduced.push(current);
   }
   return reduced;
 }, [])
@@ -19,7 +18,12 @@ console.log("2.", a2);
 // ### 3. Birdwatching Duplicate Removal
 // A birdwatcher notes species seen during a morning walk. Create a list of the species without repeats, preserving the order first seen.
 const q3 = ["sparrow", "crow", "sparrow", "eagle", "crow"];
-const a3 = q3
+const a3 = q3.reduce((reduced, current) => {
+  if (!(reduced.includes(current))) {
+    reduced.push(current);
+  }
+  return reduced;
+}, [])
 console.log("3.", a3);
 
 // ### 4. Classroom Attendance Check
