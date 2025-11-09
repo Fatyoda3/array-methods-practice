@@ -14,44 +14,56 @@ console.log("52.", a52);
 
 // ### 53. Word "Excellent" Check
 // Determine whether any student wrote the word “excellent”.
-const q53 = 
-const a53 = q53
+const q53 = [['jack', 'is', 'evil!'], ['Leon', 'is', 'overpowered'], ['what', 'you', 'buyin\'', 'excellent']];
+const a53 = q53.flat().some(student => student === 'excellent');
 console.log("53.", a53);
 
 // ### 54. Rainfall Cap Validation
 // Check whether all recorded rainfall values are under 50.
-const q54 = 
-const a54 = q54
+const q54 = [[1, 44, 5, 4, 32, 2], [234, 323, 12, 33, 50], [2, 46, 67, 443]];
+const a54 = q54.flat().every((val) => val < 50);
 console.log("54.", a54);
 
 // ### 55. Unique Movie Genres
 // Produce a list of unique movie genres mentioned by a club.
-const q55 = 
-const a55 = q55
+const q55 = [['horror', 'sorority', 'war'],
+['animated', 'horror', 'adventure'],
+['animated', 'war', 'psychology']];
+const a55 = q55.flat().reduce((uniqueGenres, current) => {
+  if (!(uniqueGenres.includes(current))) {
+    uniqueGenres.push(current);
+  }
+  return uniqueGenres;
+}, []);
 console.log("55.", a55);
 
 // ### 56. Pushup Total
 // Compute the total number of pushups done in all sessions.
-const q56 = 
-const a56 = q56
+const q56 = [[6, 16, 22], [22, 34, 5], [12, 22, 12], [12], [32]]
+const a56 = q56.flat().reduce(((count, current) => count + current), 0);
 console.log("56.", a56);
 
 // ### 57. Unique Bird Species
 // Create a list of all unique bird species spotted on a trip.
-const q57 = 
-const a57 = q57
+const q57 = [['night angel', 'crow', 'swan'], ['flamingo', 'parrot', 'sparrow'], ['ostrich', 'Kori Bustard'], ['duck', 'dodo']];
+const a57 = q57.flat().reduce((uniqueSightings, current) => {
+  if (!(uniqueSightings.includes(current))) {
+    uniqueSightings.push(current);
+  }
+  return uniqueSightings;
+}, []);
 console.log("57.", a57);
 
 // ### 58. Red Tile Count
 // Count how many tiles in a mosaic were listed as “red”.
-const q58 = 
-const a58 = q58
+const q58 = [['red', 'green', 'blue'], ['red', 'orange', 'purple'], ['red', 'green', 'violet']];
+const a58 = q58.flat().reduce((prev, current) => current === 'red' ? prev + 1 : prev, 0);
 console.log("58.", a58);
 
 // ### 59. Cycling Distance Sum
 // Sum all distances covered during cycling practice.
-const q59 = 
-const a59 = q59
+const q59 = [[1, 44, 5, 4, 32, 2], [234, 323, 12, 33, 50], [2, 46, 67, 443]]
+const a59 = q59.flat().reduce((prev, current) => current + prev, 0);
 console.log("59.", a59);
 
 // ### 60. Unique Ice Cream Flavors
