@@ -271,8 +271,36 @@ console.log("79.", a79);
 
 // ### 80. Color Frequency Summary
 // Summarize how many times each color appears in a creative art project.
-const q80 = 
-const a80 = q80
+const q80 = [
+  ["red", "blue", "green", "yellow", "orange"],
+  ["purple", "pink", "blue", "teal", "white"],
+  ["green", "black", "gray", "brown", "red"],
+  ["navy", "turquoise", "aqua", "blue", "silver"],
+  ["gold", "bronze", "copper", "black", "white"],
+  ["cyan", "magenta", "yellow", "red", "green"],
+  ["lavender", "violet", "indigo", "purple", "pink"],
+  ["maroon", "crimson", "scarlet", "red", "orange"],
+  ["olive", "lime", "mint", "green", "teal"],
+  ["beige", "cream", "tan", "brown", "white"],
+  ["charcoal", "slate", "gray", "black", "navy"],
+  ["peach", "coral", "salmon", "pink", "orange"],
+  ["sky blue", "royal blue", "navy", "blue", "aqua"],
+  ["forest green", "emerald", "lime", "green", "black"],
+  ["gold", "silver", "white", "yellow", "gray"]
+];
+const a80 = q80.flat().reduce((groupedFreq, currentVal) => {
+  const table = groupedFreq[0];
+  const frequencies = groupedFreq[1];
+
+  if (!table.includes(currentVal)) {
+    table.push(currentVal);
+    frequencies.push(1);
+  } else
+    frequencies[table.indexOf(currentVal)] += 1;
+
+
+  return groupedFreq;
+}, [[], []])
 console.log("80.", a80);
 
 // ### 81. Reverse Instructions

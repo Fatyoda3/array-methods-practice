@@ -40,6 +40,6 @@ const a65 = q65.reduce((groupedFreq, currentVal) => {
 
 
   return groupedFreq;
-}, [[], []])
+}, [[], []]);
 console.log("65.", a65);
 
