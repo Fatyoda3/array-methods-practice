@@ -394,7 +394,8 @@ console.log("48.", a48);
 // ### 49. Coin Collection Tally
 // Coins collected. Total coins.
 const q49 = [[1, 1, 2], [2, 1]];
-const a49 = q49.reduce((sumTotal, coins) => sumTotal + coins.reduce((total, coin) => coin + total, 0), 0);
+const a49 = q49.reduce((sumTotal, coins) => sumTotal +
+  coins.reduce((total, coin) => coin + total, 0), 0);
 console.log("49.", a49);
 
 // ### 50. Cooking Class Spices

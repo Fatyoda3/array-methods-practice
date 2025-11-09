@@ -87,7 +87,7 @@ console.log("61.", a61);
 // ### 62. Age Restriction Validation
 // Verify if all ages listed for an event are 18 or above.
 const q62 = [[1, 44, 5, 2], [99, 50], [2, 46, 67, 43]]
-const a62 = q62.flat().every((val) => val > 17);
+const a62 = q62.flat().every((val) => val >= 18);
 console.log("62.", a62);
 
 // ### 63. Combined Recipe Ingredients
@@ -320,55 +320,84 @@ console.log("82.", a82);
 
 // ### 83. Merge Poetry Fragments
 // Merge all small poetry fragments into one list of lines.
-const q83 = 
-const a83 = q83
+const q83 = ['roses are red', 'violets are blue', 'this assignment is flu', 'life is small', 'so let me grow tall'];
+const a83 = q83.reduce((merged, current) => merged.concat(current, '\n'), '');
 console.log("83.", a83);
 
 // ### 84. Unique Cartoon Characters
 // List unique cartoon characters favored by children.
-const q84 = 
-const a84 = q84
+const q84 = [['tom', 'pikachu', 'batman', 'robin', 'cyborg',],
+['batman', 'robin', 'cyborg',], ['optimus prime', 'oggy',], ['jerry', 'batman', 'robin', 'cyborg',]];
+const a84 = q84.flat().reduce((uniqueCharacters, current) => {
+  if (!uniqueCharacters.includes(current)) {
+    uniqueCharacters.push(current);
+  }
+  return uniqueCharacters;
+}, [])
 console.log("84.", a84);
 
 // ### 85. Total Points Scored
 // Add up all points scored by a team across multiple games.
-const q85 = 
-const a85 = q85
+const q85 = [[1, 2, 3], [2, 1, 0], [2, 1, 4]];
+const a85 = q85.flat().reduce((total, val) => total + val, 0)
 console.log("85.", a85);
 
 // ### 86. Exact Score Check
 // Check whether any team scored exactly 50 points.
-const q86 = 
-const a86 = q86
+const q86 = [[10, 20, 30], [12, 11, 50], [23, 61, 40]];
+const a86 = q86.flat().some((value) => value === 50);
 console.log("86.", a86);
 
 // ### 87. pH Value Validation
 // Ensure all pH values recorded are below 8.
-const q87 = 
-const a87 = q87
+const q87 = [[1, 2, 3], [2, 1, 0], [2, 1, 4]];
+const a87 = q87.flat().some((reading) => reading < 8);
 console.log("87.", a87);
 
 // ### 88. Unique Chocolate Flavors
 // Count unique flavors tasted in a chocolate workshop.
-const q88 = 
-const a88 = q88
+const q88 = [
+  ["Milk Chocolate", "White Chocolate", "Dark Chocolate"],
+  ["Hazelnut Chocolate", "Milk Chocolate", "Caramel Chocolate"],
+  ["Mint Chocolate", "Dark Chocolate", "Peppermint Chocolate"],
+  ["Orange Chocolate", "Caramel Chocolate", "Dark Chocolate"],
+  ["Praline Chocolate", "Hazelnut Chocolate", "White Chocolate"]
+]
+const a88 = q88.flat().reduce((uniqueFlavors, current) => {
+  if (!uniqueFlavors.includes(current)) {
+    uniqueFlavors.push(current);
+  }
+  return uniqueFlavors;
+}, []);
 console.log("88.", a88);
 
 // ### 89. Meditation Time Sum
 // Sum all minutes of meditation logged across sessions.
-const q89 = 
-const a89 = q89
+const q89 = [[10, 20, 30], [12, 11, 50], [23, 61, 40]];
+const a89 = q89.flat().reduce((count, current) => count + current, 0);
 console.log("89.", a89);
 
 // ### 90. Unique Repair Tools
 // Identify every unique tool used in a repair workshop.
-const q90 = 
-const a90 = q90
+const q90 = [
+  ["Hammer", "Screwdriver", "Pliers"],
+  ["Wrench", "Socket Set", "Pliers"],
+  ["Drill", "Screwdriver", "Measuring Tape"],
+  ["Saw", "Hammer", "Level"],
+  ["Multimeter", "Wire Stripper", "Screwdriver"]
+];
+
+const a90 = q90.flat().reduce((uniqueFlavors, current) => {
+  if (!uniqueFlavors.includes(current)) {
+    uniqueFlavors.push(current);
+  }
+  return uniqueFlavors;
+}, []);
 console.log("90.", a90);
 
 // ### 91. White Shirt Count
 // Count how many shirts in a laundry batch were listed as “white”.
-const q91 = 
+const q91 = [];
 const a91 = q91
 console.log("91.", a91);
 
