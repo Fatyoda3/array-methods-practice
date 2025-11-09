@@ -178,19 +178,29 @@ console.log("22.", a22);
 // ### 23. Name Badge Sorting
 // Students sign in repeatedly. Create a unique list of attendees.
 const q23 = ["A", "B", "A", "C", "B"];
-const a23 = q23
+const a23 = q23.reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("23.", a23);
 
 // ### 24. Ice Cream Orders
 // Orders recorded. Find how many orders were `"chocolate"`.
 const q24 = ["vanilla", "chocolate", "strawberry", "chocolate"];
-const a24 = q24
+const a24 = q24.reduce((sumTotal, chocolate) => chocolate === 'chocolate' ? sumTotal + 1 : sumTotal, 0);
 console.log("24.", a24);
 
 // ### 25. Flowers in Bouquets
 // Bouquets contain. List all unique flowers used.
 const q25 = [["rose", "lily"], ["lily", "tulip"]];
-const a25 = q25
+const a25 = q25.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("25.", a25);
 
 // ### 26. Morning Exercise Count
