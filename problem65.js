@@ -24,22 +24,32 @@
 //   return [table, frequencies];
 // }
 
+
+// const freq = (prev, current) => {
+//   for (let index = 0; index < prev.length; index++) {
+//     const currentElement = prev[index];
+//     if (currentElement[0] === current) {
+//       currentElement[1] += 1;
+//       return prev;
+//     }
+//   }
+//   prev.push([current, 1]);
+//   return prev;
+// }
 // console.log(dict(q65));
 
 const q65 = `garlic salt water`.repeat(5).split(' ');
 
-const a65 = q65.reduce((groupedFreq, currentVal) => {
-  const table = groupedFreq[0];
-  const frequencies = groupedFreq[1];
-
-  if (!table.includes(currentVal)) {
-    table.push(currentVal);
-    frequencies.push(1);
-  } else
-    frequencies[table.indexOf(currentVal)] += 1;
-
-
-  return groupedFreq;
-}, [[], []]);
+const a65 = q65.reduce((frequencyGroup, currentOcc) => {
+  for (let index = 0; index < frequencyGroup.length; index++) {
+    const group = frequencyGroup[index];
+    if (group[0] === currentOcc) {
+      group[1] += 1;
+      return frequencyGroup;
+    }
+  }
+  frequencyGroup.push([currentOcc, 1]);
+  return frequencyGroup;
+}, []);
 console.log("65.", a65);
 
