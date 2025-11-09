@@ -186,7 +186,9 @@ console.log("71.", a71);
 
 // ### 72. Completion Verification
 // Verify whether every participant completed at least one task.
-const q72 = [['completed', 'failed'], ['completed', 'failed'], 'completed '.repeat(3).split(' ')];
+const q72 = [['completed', 'failed'],
+['completed', 'failed'],
+'completed '.repeat(3).split(' ')];
 const a72 = q72.every(activities => activities.some(activity => activity === 'completed'));
 console.log("72.", a72);
 
@@ -451,7 +453,7 @@ const q96 = [
   ["Ma", "Pa", "Dha", "Ni"],
   ["Pa", "Dha", "Ni", "Sa"]
 ];
-const a96 = q96.reduce((groupedFreq, currentVal) => {
+const a96 = q96.flat().reduce((groupedFreq, currentVal) => {
   const table = groupedFreq[0];
   const frequencies = groupedFreq[1];
 
@@ -466,20 +468,47 @@ console.log("96.", a96);
 
 // ### 97. Error Message Count
 // Count the number of times “error” appears in a log of messages.
-const q97 = 
-const a97 = q97
+const q97 = [
+  ["Error", "Warning", "Critical", "Failure"],
+  ["Warning", "Working", "Processing", "Active"],
+  ["Waiting", "Pending", "Working", "Loading"],
+  ["Error", "Alert", "Timeout", "Waiting"],
+  ["Warning", "Retrying", "Processing", "Error"]
+];
+const a97 = q97.flat().reduce((countErr, current) => current === 'Error' ?
+  countErr + 1 : countErr, 0);
 console.log("97.", a97);
 
 // ### 98. Gather All Ingredients
 // Gather all ingredients used in three versions of the same dish.
-const q98 = 
-const a98 = q98
+const q98 = [
+  ["Saffron", "Cardamom", "Cinnamon", "Clove"],
+  ["Turmeric", "Ginger", "Cumin", "Cardamom"],
+  ["Star Anise", "Coriander", "Cinnamon", "Nutmeg"],
+  ["Sumac", "Paprika", "Turmeric", "Clove"],
+  ["Fenugreek", "Mustard Seeds", "Cumin", "Curry Leaves"],
+  ["Black Pepper", "Cardamom", "Ginger", "Saffron"],
+  ["Galangal", "Lemongrass", "Chili"],
+  ["Clove", "Nutmeg", "Allspice", "Cinnamon"]
+];
+const a98 = q98.flat().reduce((uniqueIngredients, current) => {
+  if (!uniqueIngredients.includes(current)) {
+    uniqueIngredients.push(current);
+  }
+  return uniqueIngredients;
+}, []);
 console.log("98.", a98);
 
 // ### 99. Skipped Activity Check
 // Check if any student skipped all activity sessions.
-const q99 = 
-const a99 = q99
+const q99 = [
+  ["Started", "Paused", "Skipped"],
+  ["Pending", "Skipped", "Completed", "Failed"],
+  ["Active", "Paused", "Resumed", "Completed"],
+  ["Queued", "Running", "Skipped", "Cancelled"],
+  ["Retrying", "Paused", "Error", "Completed"]
+];
+const a99 = q99.flat().some((value) => value === 'Skipped');
 console.log("99.", a99);
 
 // ### 100. Distinct Hummed Songs
