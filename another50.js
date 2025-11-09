@@ -118,8 +118,27 @@ const q65 = [
   ['blue-berry', 'strawberry', 'caramel'],
   ['butter-scotch', 'mint', 'chocolate',],
   ['strawberry', 'caramel'],
-  ['mint', 'chocolate',]]
-const a65 = q65
+  ['mint', 'chocolate',]
+].flat();
+
+const a65 = q65.reduce((array) => {
+  console.log(array);
+  const table = array[0];
+  const frequencies = array[1];
+
+  for (let index = 0; index < array.length; index++) {
+    if (!table.includes(array[index])) {
+      table.push(array[index]);
+      frequencies.push(1);
+    }
+    else {
+      frequencies[table.indexOf(array[index])] += 1;
+    }
+
+  }
+
+  return array;
+}, [[], []])
 console.log("65.", a65);
 
 // ### 66. Note "Fa" Check
