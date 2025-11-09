@@ -212,13 +212,18 @@ console.log("26.", a26);
 // ### 27. Train Station Announcements
 // Stations announced. Find the station names without repeats.
 const q27 = [["A", "B"], ["B", "C"], ["A"]];
-const a27 = q27
+const a27 = q27.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("27.", a27);
 
 // ### 28. Book Club Pages Read
 // Groups read pages. Find total pages read.
 const q28 = [[12, 10], [5], [8, 7]];
-const a28 = q28
+const a28 = q28.reduce((sumTotal, book) => sumTotal + book.reduce((total, pages) => pages + total, 0), 0);
 console.log("28.", a28);
 
 // ### 29. Rainfall Data Check
