@@ -235,7 +235,7 @@ console.log("29.", a29);
 // ### 30. Fruit Stand Weight Totals
 // Weights. Compute total weight.
 const q30 = [[4, 3], [2], [3, 1]];
-const a30 = q30
+const a30 = q30.reduce((sumTotal, stand) => sumTotal + stand.reduce((total, fruits) => fruits + total, 0), 0);
 console.log("30.", a30);
 
 // ### 31. School Snack List
