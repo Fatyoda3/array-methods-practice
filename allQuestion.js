@@ -52,7 +52,7 @@ console.log("6.", a6);
 // ### 7. Weather Sensor Validation
 // Several temperature sheets. Check if **every** recorded temperature is below 32.
 const q7 = [[22, 23], [25, 24, 22], [29]];
-const a7 = q7
+const a7 = q7.flat().every((el => el <= 32));
 console.log("7.", a7);
 
 // ### 8. Fitness Tracker Miles
