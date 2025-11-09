@@ -366,31 +366,46 @@ console.log("45.", a45);
 // ### 46. Tea Tasting Flavors
 // Flavors. Unique flavors.
 const q46 = [["mint", "ginger"], ["lemon"], ["mint"]];
-const a46 = q46
+const a46 = q46.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("46.", a46);
 
 // ### 47. Photography Exposure Values
 // Values. Check if any value equals 4.
 const q47 = [[2, 3], [1], [4, 2]];
-const a47 = q47
+const a47 = q47.some(vals => vals.some(val => val === 4));
 console.log("47.", a47);
 
 // ### 48. Drawing Class Tools
 // Tools. Unique tools used.
 const q48 = [["pencil", "charcoal"], ["ink"], ["pencil"]];
-const a48 = q48
+const a48 = q48.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("48.", a48);
 
 // ### 49. Coin Collection Tally
 // Coins collected. Total coins.
 const q49 = [[1, 1, 2], [2, 1]];
-const a49 = q49
+const a49 = q49.reduce((sumTotal, coins) => sumTotal + coins.reduce((total, coin) => coin + total, 0), 0);
 console.log("49.", a49);
 
 // ### 50. Cooking Class Spices
 // Spices. Unique spices.
 const q50 = [["salt", "pepper"], ["turmeric"], ["salt"]];
-const a50 = q50
+const a50 = q50.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("50.", a50);
 // ### 51. Fruit Log Count
 // Count how many times “banana” appears in a fruit log.
