@@ -161,7 +161,7 @@ console.log("20.", a20);
 // ### 21. Classroom Pen Distribution
 // Pens given. Total pens handed out.
 const q21 = [[2, 3], [1], [3, 2]];
-const a21 = q21.reduce((sumTotal, origami) => sumTotal + origami.reduce((total, weight) => weight + total, 0), 0)
+const a21 = q21.reduce((sumTotal, origami) => sumTotal + origami.reduce((total, weight) => weight + total, 0), 0);
 console.log("21.", a21);
 
 // ### 22. Movie Marathon Titles
@@ -206,7 +206,7 @@ console.log("25.", a25);
 // ### 26. Morning Exercise Count
 // Repetitions. Total repetitions done.
 const q26 = [[10, 20], [5], [15, 10]];
-const a26 = q26
+const a26 = q26.reduce((sumTotal, repSet) => sumTotal + repSet.reduce((total, rep) => rep + total, 0), 0);
 console.log("26.", a26);
 
 // ### 27. Train Station Announcements
