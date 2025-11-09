@@ -144,25 +144,35 @@ console.log("18.", a18);
 // ### 19. Paper Crane Making
 // Origami students make cranes in sessions. Compute the total cranes.
 const q19 = [[3, 2], [1], [4]];
-const a19 = q19.reduce((sumTotal, origami) => sumTotal + origami.reduce((total, weight) => weight + total, 0), 0)
+const a19 = q19.reduce((sumTotal, origami) => sumTotal + origami.reduce((total, weight) => weight + total, 0), 0);
 console.log("19.", a19);
 
 // ### 20. Fruit Basket Inventory
 // Mixed fruits recorded. List unique fruits used.
 const q20 = [["apple", "banana"], ["apple"], ["apple", "orange"]];
-const a20 = q20
+const a20 = q20.reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("20.", a20);
 
 // ### 21. Classroom Pen Distribution
 // Pens given. Total pens handed out.
 const q21 = [[2, 3], [1], [3, 2]];
-const a21 = q21
+const a21 = q21.reduce((sumTotal, origami) => sumTotal + origami.reduce((total, weight) => weight + total, 0), 0)
 console.log("21.", a21);
 
 // ### 22. Movie Marathon Titles
 // Movies watched. List unique titles watched.
 const q22 = [["Inception", "Dunkirk"], ["Interstellar"], ["Inception"]];
-const a22 = q22
+const a22 = q22.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("22.", a22);
 
 // ### 23. Name Badge Sorting
