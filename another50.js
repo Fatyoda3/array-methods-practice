@@ -108,37 +108,22 @@ console.log("64.", a64);
 
 // ### 65. Word Frequency Summary
 // Build a frequency summary of words used in a poem draft.
-const q65 = [
-  ['garlic', 'salt', 'water', 'cheese'],
-  ['salt', 'water', 'cheese'],
-  ['milk', 'sugar', 'orange', 'gelatin'],
-  ['sugar', 'orange', 'gelatin'], ["step", "tap"],
-  ["turn", "step"],
-  ['vanilla', 'truffle', 'blue-berry', 'strawberry', 'caramel'],
-  ['blue-berry', 'strawberry', 'caramel'],
-  ['butter-scotch', 'mint', 'chocolate',],
-  ['strawberry', 'caramel'],
-  ['mint', 'chocolate',]
-].flat();
+const q65 = `garlic salt water`.repeat(5).split(' ');
 
-const a65 = q65.reduce((array) => {
-  console.log(array);
-  const table = array[0];
-  const frequencies = array[1];
+const a65 = q65.reduce((groupedFreq, currentVal) => {
+  const table = groupedFreq[0];
+  const frequencies = groupedFreq[1];
 
-  for (let index = 0; index < array.length; index++) {
-    if (!table.includes(array[index])) {
-      table.push(array[index]);
-      frequencies.push(1);
-    }
-    else {
-      frequencies[table.indexOf(array[index])] += 1;
-    }
+  if (!table.includes(currentVal)) {
+    table.push(currentVal);
+    frequencies.push(1);
+  } else
+    frequencies[table.indexOf(currentVal)] += 1;
 
-  }
 
-  return array;
-}, [[], []])
+  return groupedFreq;
+}, [[], []]);
+
 console.log("65.", a65);
 
 // ### 66. Note "Fa" Check
