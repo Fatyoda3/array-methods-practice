@@ -265,8 +265,8 @@ console.log("78.", a78);
 
 // ### 79. Weight Limit Validation
 // Verify that all listed items weigh less than 10 grams.
-const q79 = 
-const a79 = q79
+const q79 = [[10, 23, 23], [10, 22, 1], [0, 2, 10]];
+const a79 = q79.every((values) => values.every(value => value < 10));
 console.log("79.", a79);
 
 // ### 80. Color Frequency Summary
