@@ -186,8 +186,8 @@ console.log("71.", a71);
 
 // ### 72. Completion Verification
 // Verify whether every participant completed at least one task.
-const q72 = 
-const a72 = q72
+const q72 = [['completed', 'failed'], ['completed', 'failed'], 'completed '.repeat(3).split(' ')]
+const a72 = q72.every(activities => activities.some(activity => activity === 'completed'));
 console.log("72.", a72);
 
 // ### 73. Unique Travel Destinations
