@@ -132,19 +132,19 @@ console.log("16.", a16);
 // ### 17. Dance Class Steps
 // Step sequences. Check if `"turn"` appears in any sequence.
 const q17 = [["step", "tap"], ["turn", "step"]];
-const a17 = q17
+const a17 = q17.some((steps) => steps.some(step => step === 'turn'));
 console.log("17.", a17);
 
 // ### 18. Garden Watering Amount
 // Water used. Total amount of water used.
 const q18 = [[1, 2, 1], [3], [2]];
-const a18 = q18
+const a18 = q18.reduce((sumTotal, water) => sumTotal + water.reduce((total, weight) => weight + total, 0), 0);
 console.log("18.", a18);
 
 // ### 19. Paper Crane Making
 // Origami students make cranes in sessions. Compute the total cranes.
 const q19 = [[3, 2], [1], [4]];
-const a19 = q19
+const a19 = q19.reduce((sumTotal, origami) => sumTotal + origami.reduce((total, weight) => weight + total, 0), 0)
 console.log("19.", a19);
 
 // ### 20. Fruit Basket Inventory
