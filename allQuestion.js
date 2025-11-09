@@ -64,13 +64,18 @@ console.log("8.", a8);
 // ### 9. Art Workshop Color Variety
 // Paint colors used in sessions. Find unique colors used.
 const q9 = [["blue", "yellow"], ["yellow", "green"], ["blue"]];
-const a9 = q9
+const a9 = q9.flat().reduce((reduced, current) => {
+  if (!(reduced.includes(current))) {
+    reduced.push(current);
+  }
+  return reduced;
+}, [])
 console.log("9.", a9);
 
 // ### 10. Library Return Counter
 // Books returned. Count how many times “Dune” was returned.
 const q10 = ["Dune", "Dune", "Foundation", "Dune"];
-const a10 = q10
+const a10 = q10.reduce((count, current) => current === 'Dune' ? count + 1 : count, 0)
 console.log("10.", a10);
 
 // ### 11. Lunchbox Ingredient Inventory
