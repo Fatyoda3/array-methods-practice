@@ -252,85 +252,115 @@ console.log("31.", a31);
 // ### 32. Photo Contest Entries
 // Photographers submit sets. List unique themes.
 const q32 = [["sunset", "bird"], ["river"], ["sunset"]];
-const a32 = q32
+const a32 = q32.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("32.", a32);
 
 // ### 33. Electricity Reading Validation
 // Readings. Check if all readings are below 120.
 const q33 = [[110, 115], [118], [109]];
-const a33 = q33
+const a33 = q33.every(readings => readings.every(reading => reading < 120));
 console.log("33.", a33);
 
 // ### 34. Jogging Lap Count
 // Laps. Compute total laps.
 const q34 = [[2, 3, 2], [1], [4]];
-const a34 = q34
+const a34 = q34.reduce((sumTotal, laps) => sumTotal + laps.reduce((total, lap) => lap + total, 0), 0);
 console.log("34.", a34);
 
 // ### 35. Music Playlist Repeats
 // Songs played. Count occurrences of `"track1"`.
 const q35 = ["track1", "track2", "track1"];
-const a35 = q35
+const a35 = q35.reduce((count, track) => track === 'track1' ? count + 1 : count, 0);
 console.log("35.", a35);
 
 // ### 36. Café Order Ingredients
 // Ingredients. Unique ingredients needed.
 const q36 = [["cheese", "bread"], ["tomato"], ["bread"]];
-const a36 = q36
+const a36 = q36.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("36.", a36);
 
 // ### 37. Student Poetry Words
 // Word lists. List all unique words.
 const q37 = [["sky", "blue"], ["night"], ["sky", "dark"]];
-const a37 = q37
+const a37 = q37.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("37.", a37);
 
 // ### 38. Gift Box Items
 // Items. List unique items used.
 const q38 = [["toy", "sticker"], ["candy", "sticker"]];
-const a38 = q38
+const a38 = q38.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("38.", a38);
 
 // ### 39. Gym Routine Count
 // Routine counts. Total counts.
 const q39 = [[6, 4], [3, 2]];
-const a39 = q39
+const a39 = q39.reduce((count, track) => track === 'track1' ? count + 1 : count, 0);
 console.log("39.", a39);
 
 // ### 40. Fish Tank Measurements
 // Measurements. Check if any measurement is above 7.
 const q40 = [[5, 6], [7], [6]];
-const a40 = q40
+const a40 = q40.some(readings => readings.some(reading => reading > 7));
 console.log("40.", a40);
 
 // ### 41. Candy Distribution
 // Candy numbers. Sum all candies.
 const q41 = [[1, 2, 3], [2]];
-const a41 = q41
+const a41 = q41.reduce((sumTotal, candies) => sumTotal + candies.reduce((total, candy) => candy + total, 0), 0);
 console.log("41.", a41);
 
 // ### 42. Workshop Attendance
 // Participants. List unique participants.
 const q42 = [["Tom", "Jerry"], ["Jerry", "Spike"]];
-const a42 = q42
+const a42 = q42.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("42.", a42);
 
 // ### 43. Space Camp Star Names
 // Stars named. Unique star names.
 const q43 = [["Vega", "Sirius"], ["Vega", "Rigel"]];
-const a43 = q43
+const a43 = q43.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("43.", a43);
 
 // ### 44. Train Car Passenger Check
 // Counts. Total passengers.
 const q44 = [[10, 12], [15]];
-const a44 = q44
+const a44 = q44.reduce((sumTotal, passengers) => sumTotal + passengers.reduce((total, passenger) => passenger + total, 0), 0);
 console.log("44.", a44);
 
 // ### 45. Weekly Grocery Tally
 // Quantities. Find the total.
 const q45 = [[3, 5], [2, 1]];
-const a45 = q45
+const a45 = q45.reduce((sumTotal, groceries) => sumTotal + groceries.reduce((total, grocery) => grocery + total, 0), 0);
 console.log("45.", a45);
 
 // ### 46. Tea Tasting Flavors
