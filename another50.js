@@ -180,50 +180,87 @@ console.log("70.", a70);
 
 // ### 71. Maximum Threshold Check
 // Check if any experiment reading hit the maximum threshold of 100.
-const q71 = [[1, 44, 5, 4, 32, 2], [12, 33, 50], [2, 46, 67, 100]]
+const q71 = [[1, 44, 5, 4, 32, 2], [12, 33, 50], [2, 46, 67, 100]];
 const a71 = q71.some(vals => vals.some(val => val === 100));
 console.log("71.", a71);
 
 // ### 72. Completion Verification
 // Verify whether every participant completed at least one task.
-const q72 = [['completed', 'failed'], ['completed', 'failed'], 'completed '.repeat(3).split(' ')]
+const q72 = [['completed', 'failed'], ['completed', 'failed'], 'completed '.repeat(3).split(' ')];
 const a72 = q72.every(activities => activities.some(activity => activity === 'completed'));
 console.log("72.", a72);
 
 // ### 73. Unique Travel Destinations
 // List unique destinations chosen in a travel club survey.
-const q73 = 
-const a73 = q73
+const q73 = [['America', 'America', "Somali"],
+['Guinea', 'Sudan', 'Nigeria', 'Somali'],
+['Korea', 'India', 'Singapore']];
+const a73 = q73.flat().reduce((uniqueDestinations, current) => {
+
+  if (!uniqueDestinations.includes(current)) {
+    uniqueDestinations.push(current);
+  }
+  return uniqueDestinations;
+}, [])
 console.log("73.", a73);
 
 // ### 74. Instrument Practice Sum
 // Sum all hours spent practicing an instrument.
-const q74 = 
-const a74 = q74
+const q74 = [[1, 0, 5, 4, 2], [12, 0, 50], [2, 0, 6, 7, 0]];
+const a74 = q74.flat().reduce((reps, rep) => reps + rep, 0);
 console.log("74.", a74);
 
 // ### 75. Distinct Plant Types
 // Find all distinct types of plants noted during fieldwork.
-const q75 = 
-const a75 = q75
+const q75 = [
+  ["Dandelion",
+    "Stinging Nettle",
+    "Wild Garlic"],
+  ["Yarrow",
+    "Clover",
+    "Chicory"],
+  ["Plantain",
+    "Shepherd’s Purse",
+    "Dandelion",
+    "Stinging Nettle",
+    "Queen Anne’s Lace"],
+  ["Milk Thistle", "Dandelion",
+    "Stinging Nettle",
+    "Wild Garlic",]
+]
+const a75 = q75.flat().reduce((uniquesSightings, current) => {
+  if (!uniquesSightings.includes(current)) {
+    uniquesSightings.push(current);
+  }
+  return uniquesSightings;
+}, [])
 console.log("75.", a75);
 
 // ### 76. Specific Sound Occurrence Count
 // Count occurrences of a specific sound in a phonetics study.
-const q76 = 
-const a76 = q76
+const q76 = ['moo', 'boo', 'coo', 'neigh', 'woof', 'coo',
+  'coo', 'boom', 'meow', 'hiss', 'buzz'];
+const a76 = q76.reduce((count, sound) => sound === 'coo' ? count + 1 : count, 0);
 console.log("76.", a76);
 
 // ### 77. Combined Syllables
 // Combine all syllables used in language drills.
-const q77 = 
-const a77 = q77
+const q77 = [
+  ["pa", "ta", "ka", "ma", "na", "sa", "la", "ra", "fa", "va"],
+  ["ap", "at", "ak", "am", "an", "as", "al", "ar"],
+  ["pat", "tap", "map", "man", "sam", "ran", "lat", "pan"],
+  ["pla", "tra", "kli", "gla", "smi", "bra", "fra"],
+  ["paa", "mee", "koo", "too", "laa", "see"],
+  ["a", "e", "i", "o", "u"],
+  ["pata", "kapa", "maka", "taka", "sapala", "malata"]
+]
+const a77 = q77.flat().reduce((combined, syllable) => combined.concat(syllable), '')
 console.log("77.", a77);
 
 // ### 78. Zero Measurement Check
 // Check if any measurement is exactly zero.
-const q78 = 
-const a78 = q78
+const q78 = [[0, 1, 3], [4, 56, 76], [23, 1, 0]];
+const a78 = q78.flat().some((value) => value === 0);
 console.log("78.", a78);
 
 // ### 79. Weight Limit Validation
