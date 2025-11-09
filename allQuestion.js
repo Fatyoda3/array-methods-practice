@@ -81,7 +81,12 @@ console.log("10.", a10);
 // ### 11. Lunchbox Ingredient Inventory
 // Lists of ingredients. Produce a list of distinct ingredients.
 const q11 = [["rice", "lentils"], ["rice"], ["curd", "lentils"]];
-const a11 = q11
+const a11 = q11.flat().reduce((reduced, current) => {
+  if (!(reduced.includes(current))) {
+    reduced.push(current);
+  }
+  return reduced;
+}, [])
 console.log("11.", a11);
 
 // ### 12. Choir Harmony Review
