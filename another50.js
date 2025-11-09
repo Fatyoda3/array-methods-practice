@@ -91,19 +91,34 @@ console.log("62.", a62);
 
 // ### 63. Combined Recipe Ingredients
 // Combine the ingredients from all recipe attempts.
-const q63 = 
-const a63 = q63
+const q63 = [['garlic', 'salt', 'water', 'cheese'], ['salt', 'water', 'cheese'], ['milk', 'sugar', 'orange', 'gelatin'], ['sugar', 'orange', 'gelatin']]
+const a63 = q63.flat().reduce((uniqueItems, current) => {
+  if (!(uniqueItems.includes(current))) {
+    uniqueItems.push(current);
+  }
+  return uniqueItems;
+}, []);
 console.log("63.", a63);
 
 // ### 64. Reverse Dance Steps
 // Reverse the order of dance steps recorded by a choreographer.
-const q64 = 
-const a64 = q64
+const q64 = [["step", "tap"], ["turn", "step"]];
+const a64 = q64.flat().reduce((reversed, val) => { reversed.unshift(val); return reversed; }, []);
 console.log("64.", a64);
 
 // ### 65. Word Frequency Summary
 // Build a frequency summary of words used in a poem draft.
-const q65 = 
+const q65 = [
+  ['garlic', 'salt', 'water', 'cheese'],
+  ['salt', 'water', 'cheese'],
+  ['milk', 'sugar', 'orange', 'gelatin'],
+  ['sugar', 'orange', 'gelatin'], ["step", "tap"],
+  ["turn", "step"],
+  ['vanilla', 'truffle', 'blue-berry', 'strawberry', 'caramel'],
+  ['blue-berry', 'strawberry', 'caramel'],
+  ['butter-scotch', 'mint', 'chocolate',],
+  ['strawberry', 'caramel'],
+  ['mint', 'chocolate',]]
 const a65 = q65
 console.log("65.", a65);
 
