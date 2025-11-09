@@ -92,7 +92,7 @@ console.log("11.", a11);
 // ### 12. Choir Harmony Review
 // Singers produce sequences. Check whether any group sang `"so"`.
 const q12 = [["la", "la"], ["mi"], ["so", "la"]];
-const a12 = q12
+const a12 = q12.some(group => group.some(choir => choir === 'so'));
 console.log("12.", a12);
 
 // ### 13. Vegetable Crate Totals
