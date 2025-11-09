@@ -104,14 +104,19 @@ console.log("13.", a13);
 // ### 14. Post Office Parcel Record
 // Parcel sizes logged. Find unique parcel sizes.
 const q14 = ["small", "large", "medium", "small"];
-const a14 = q14
+const a14 = q14.reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, [])
 console.log("14.", a14);
 
 // ### 15. Wildlife Sighting Count
 // Animal sightings. Count how many times “deer” was seen.
 const q15 = ["deer", "deer", "rabbit", "deer"];
-const a15 = q15
-console.log("15.", a15);
+const a15 = q15.
+  console.log("15.", a15);
 
 // ### 16. Study Group Completion
 // Study groups finish chapters. Find all chapters completed by any group.
