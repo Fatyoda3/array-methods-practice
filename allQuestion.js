@@ -58,7 +58,7 @@ console.log("7.", a7);
 // ### 8. Fitness Tracker Miles
 // Runner logs. Find the total miles run.
 const q8 = [[2, 3, 2], [4], [1, 1]];
-const a8 = q8
+const a8 = q8.reduce((reduced, curr) => reduced + curr.reduce((reduced, curr) => reduced + curr, 0), 0);
 console.log("8.", a8);
 
 // ### 9. Art Workshop Color Variety
