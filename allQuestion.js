@@ -98,7 +98,7 @@ console.log("12.", a12);
 // ### 13. Vegetable Crate Totals
 // Crate weights. Find the sum of all weights.
 const q13 = [[4, 6], [2, 3, 1], [5]];
-const a13 = q13
+const a13 = q13.reduce((sumTotal, crate) => sumTotal + crate.reduce((total, weight) => weight + total, 0), 0)
 console.log("13.", a13);
 
 // ### 14. Post Office Parcel Record
