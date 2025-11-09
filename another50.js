@@ -128,8 +128,8 @@ console.log("65.", a65);
 
 // ### 66. Note "Fa" Check
 // Determine whether the note “fa” appears in any music sheet.
-const q66 = 
-const a66 = q66
+const q66 = [["mi", "fa", "so"], ["do", "mi"], ["fa"]];
+const a66 = q66.flat().some(val => val === 'fa');
 console.log("66.", a66);
 
 // ### 67. Parcel Weight Sum
