@@ -397,38 +397,71 @@ console.log("90.", a90);
 
 // ### 91. White Shirt Count
 // Count how many shirts in a laundry batch were listed as “white”.
-const q91 = [];
-const a91 = q91
+const q91 = [
+  ["Gray", "White", "Black", "Blue"],
+  ["Green", "White", "Yellow", "Black"],
+  ["Red", "White", "Blue", "Purple"],
+  ["White", "Orange", "Gray", "Pink"],
+  ["Brown", "White", "Red", "Green"]
+];
+const a91 = q91.flat().reduce((whiteCount, current) =>
+  current === 'White' ?
+    whiteCount + 1 : whiteCount, 0);
 console.log("91.", a91);
 
 // ### 92. Combined Meeting Notes
 // Combine all notes written during a meeting into one list.
-const q92 = 
-const a92 = q92
+const q92 = [['we are under-paid ', 'I like to sleep during meetings '],
+['Should I take loans for buying Iphone '],
+['Wow with this product we may not get any sales ']];
+const a92 = q92.flat().reduce((joinedNotes, current) =>
+  joinedNotes.concat(current, '\n'));
 console.log("92.", a92);
 
 // ### 93. "Fragile" Item Check
 // Check if any item in a shipment is marked “fragile”.
-const q93 = 
-const a93 = q93
+const q93 = [
+  ["Fragile", "Handle with Care", "Glass", "Delicate"],
+  ["Caution", "Fragile", "Hazardous", "Breakable"],
+  ["Handle with Care", "Perishable", "Sensitive", "Flammable"],
+  ["Toxic", "Hazardous", "Corrosive", "Fragile"],
+  ["Delicate", "Explosive", "Handle with Care", "Precious"]
+];
+const a93 = q93.flat().some((word) => word === 'Fragile');
 console.log("93.", a93);
 
 // ### 94. Lowercase Letter Validation
 // Verify that all letters written by participants are lowercase.
-const q94 = 
-const a94 = q94
+const q94 = 'ljkasdflakjfdlakejrlkjdf'.split('');
+const a94 = q94.every((letter) => letter === letter.toLowerCase());
 console.log("94.", a94);
 
 // ### 95. Reverse Chess Moves
 // Reverse a list of moves recorded during a chess game.
-const q95 = 
-const a95 = q95
+const q95 = ['B', 'K', 'R', 'N']
+const a95 = q95.reduce((reverse, move) => { reverse.unshift(move); return reverse; }, []);
 console.log("95.", a95);
 
 // ### 96. Musical Note Frequency
 // Build a frequency list for musical notes practiced in a session.
-const q96 = 
-const a96 = q96
+const q96 = [
+  ["Sa", "Re", "Ga", "Ma"],
+  ["Re", "Ga", "Ma", "Pa"],
+  ["Ga", "Ma", "Pa", "Dha"],
+  ["Ma", "Pa", "Dha", "Ni"],
+  ["Pa", "Dha", "Ni", "Sa"]
+];
+const a96 = q96.reduce((groupedFreq, currentVal) => {
+  const table = groupedFreq[0];
+  const frequencies = groupedFreq[1];
+
+  if (!table.includes(currentVal)) {
+    table.push(currentVal);
+    frequencies.push(1);
+  } else
+    frequencies[table.indexOf(currentVal)] += 1;
+  return groupedFreq;
+}, [[], []]);
 console.log("96.", a96);
 
 // ### 97. Error Message Count
