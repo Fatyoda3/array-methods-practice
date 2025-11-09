@@ -241,7 +241,12 @@ console.log("30.", a30);
 // ### 31. School Snack List
 // Snacks. Unique snacks served.
 const q31 = [["idli", "vada"], ["vada", "upma"]];
-const a31 = q31
+const a31 = q31.flat().reduce((unique, current) => {
+  if (!(unique.includes(current))) {
+    unique.push(current);
+  }
+  return unique;
+}, []);
 console.log("31.", a31);
 
 // ### 32. Photo Contest Entries
