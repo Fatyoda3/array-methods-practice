@@ -11,7 +11,8 @@ console.log("51.", a51);
 const q52 = [['jack', 'is', 'evil!'],
 ['Leon', 'is', 'overpowered'],
 ['what', 'you', 'buyin\'']];
-const a52 = q52.flat().reduce((sentence, currentWord) => sentence.concat(currentWord, ' '), '');
+const a52 = q52.flat().reduce((sentence, currentWord) =>
+  sentence.concat(currentWord, ' '), '');
 console.log("52.", a52);
 
 // ### 53. Word "Excellent" Check
