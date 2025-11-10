@@ -13,4 +13,4 @@ sentences
   .filter(word => word[0] === 'a');
 
 // Output:
-// [ "a", "also", "another", "arbitrary", "An" ]
+// [ "a", "also", "another", "arbitrary", "An" ]x
