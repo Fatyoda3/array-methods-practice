@@ -8,19 +8,25 @@ console.log("51.", a51);
 
 // ### 52. Worksheet Words Combination
 // Combine all words written by students on three worksheets.
-const q52 = [['jack', 'is', 'evil!'], ['Leon', 'is', 'overpowered'], ['what', 'you', 'buyin\'']];
+const q52 = [['jack', 'is', 'evil!'],
+['Leon', 'is', 'overpowered'],
+['what', 'you', 'buyin\'']];
 const a52 = q52.flat().reduce((sentence, currentWord) => sentence.concat(currentWord, ' '), '');
 console.log("52.", a52);
 
 // ### 53. Word "Excellent" Check
 // Determine whether any student wrote the word “excellent”.
-const q53 = [['jack', 'is', 'evil!'], ['Leon', 'is', 'overpowered'], ['what', 'you', 'buyin\'', 'excellent']];
+const q53 = [['jack', 'is', 'evil!'],
+['Leon', 'is', 'overpowered'],
+['what', 'you', 'buyin\'', 'excellent']];
 const a53 = q53.flat().some(student => student === 'excellent');
 console.log("53.", a53);
 
 // ### 54. Rainfall Cap Validation
 // Check whether all recorded rainfall values are under 50.
-const q54 = [[1, 44, 5, 4, 32, 2], [234, 323, 12, 33, 50], [2, 46, 67, 443]];
+const q54 = [[1, 44, 5, 4, 32, 2],
+[234, 323, 12, 33, 50],
+[2, 46, 67, 443]];
 const a54 = q54.flat().every((val) => val < 50);
 console.log("54.", a54);
 
@@ -39,14 +45,19 @@ console.log("55.", a55);
 
 // ### 56. Pushup Total
 // Compute the total number of pushups done in all sessions.
-const q56 = [[6, 16, 22], [22, 34, 5], [12, 22, 12], [12], [32]]
+const q56 = [[6, 16, 22],
+[22, 34, 5],
+[12, 22, 12],
+[12], [32]]
 const a56 = q56.flat().reduce(((count, current) => count + current), 0);
 console.log("56.", a56);
 
 // ### 57. Unique Bird Species
 // Create a list of all unique bird species spotted on a trip.
-const q57 = [['night angel', 'crow', 'swan'], ['flamingo', 'parrot', 'sparrow'],
-['ostrich', 'Kori Bustard'], ['duck', 'dodo']];
+const q57 = [['night angel', 'crow', 'swan'],
+['flamingo', 'parrot', 'sparrow'],
+['ostrich', 'Kori Bustard'],
+['duck', 'dodo']];
 const a57 = q57.flat().reduce((uniqueSightings, current) => {
   if (!(uniqueSightings.includes(current))) {
     uniqueSightings.push(current);
@@ -57,19 +68,25 @@ console.log("57.", a57);
 
 // ### 58. Red Tile Count
 // Count how many tiles in a mosaic were listed as “red”.
-const q58 = [['red', 'green', 'blue'], ['red', 'orange', 'purple'], ['red', 'green', 'violet']];
+const q58 = [['red', 'green', 'blue'],
+['red', 'orange', 'purple'],
+['red', 'green', 'violet']];
 const a58 = q58.flat().reduce((prev, current) => current === 'red' ? prev + 1 : prev, 0);
 console.log("58.", a58);
 
 // ### 59. Cycling Distance Sum
 // Sum all distances covered during cycling practice.
-const q59 = [[1, 44, 5, 4, 32, 2], [234, 323, 12, 33, 50], [2, 46, 67, 443]]
+const q59 = [[1, 44, 5, 4, 32, 2],
+[234, 323, 12, 33, 50],
+[2, 46, 67, 443]]
 const a59 = q59.flat().reduce((prev, current) => current + prev, 0);
 console.log("59.", a59);
 
 // ### 60. Unique Ice Cream Flavors
 // List unique flavors tried in an ice-cream tasting event.
-const q60 = [['vanilla', 'truffle', 'blue-berry', 'strawberry', 'caramel'], ['blue-berry', 'strawberry', 'caramel'], ['butter-scotch', 'mint', 'chocolate',], ['strawberry', 'caramel'], ['mint', 'chocolate',]]
+const q60 = [['vanilla', 'truffle', 'blue-berry', 'strawberry', 'caramel'],
+['blue-berry', 'strawberry', 'caramel'], ['butter-scotch', 'mint', 'chocolate'],
+['strawberry', 'caramel'], ['mint', 'chocolate']]
 const a60 = q60.flat().reduce((uniqueFlavors, current) => {
   if (!(uniqueFlavors.includes(current))) {
     uniqueFlavors.push(current);
@@ -80,7 +97,9 @@ console.log("60.", a60);
 
 // ### 61. High Score Check
 // Check if any participant scored above 90 in tests.
-const q61 = [[1, 44, 5, 2], [99, 50], [2, 46, 67, 43]]
+const q61 = [[1, 44, 5, 2],
+[99, 50],
+[2, 46, 67, 43]]
 const a61 = q61.flat().some((val) => val > 90);
 console.log("61.", a61);
 
