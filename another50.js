@@ -49,7 +49,7 @@ console.log("55.", a55);
 const q56 = [[6, 16, 22],
 [22, 34, 5],
 [12, 22, 12],
-[12], [32]]
+[12], [32]];
 const a56 = q56.flat().reduce(((count, current) => count + current), 0);
 console.log("56.", a56);
 
@@ -79,7 +79,7 @@ console.log("58.", a58);
 // Sum all distances covered during cycling practice.
 const q59 = [[1, 44, 5, 4, 32, 2],
 [234, 323, 12, 33, 50],
-[2, 46, 67, 443]]
+[2, 46, 67, 443]];
 const a59 = q59.flat().reduce((prev, current) => current + prev, 0);
 console.log("59.", a59);
 
@@ -87,7 +87,7 @@ console.log("59.", a59);
 // List unique flavors tried in an ice-cream tasting event.
 const q60 = [['vanilla', 'truffle', 'blue-berry', 'strawberry', 'caramel'],
 ['blue-berry', 'strawberry', 'caramel'], ['butter-scotch', 'mint', 'chocolate'],
-['strawberry', 'caramel'], ['mint', 'chocolate']]
+['strawberry', 'caramel'], ['mint', 'chocolate']];
 const a60 = q60.flat().reduce((uniqueFlavors, current) => {
   if (!(uniqueFlavors.includes(current))) {
     uniqueFlavors.push(current);
@@ -100,19 +100,19 @@ console.log("60.", a60);
 // Check if any participant scored above 90 in tests.
 const q61 = [[1, 44, 5, 2],
 [99, 50],
-[2, 46, 67, 43]]
+[2, 46, 67, 43]];
 const a61 = q61.flat().some((val) => val > 90);
 console.log("61.", a61);
 
 // ### 62. Age Restriction Validation
 // Verify if all ages listed for an event are 18 or above.
-const q62 = [[1, 44, 5, 2], [99, 50], [2, 46, 67, 43]]
+const q62 = [[1, 44, 5, 2], [99, 50], [2, 46, 67, 43]];
 const a62 = q62.flat().every((val) => val >= 18);
 console.log("62.", a62);
 
 // ### 63. Combined Recipe Ingredients
 // Combine the ingredients from all recipe attempts.
-const q63 = [['garlic', 'salt', 'water', 'cheese'], ['salt', 'water', 'cheese'], ['milk', 'sugar', 'orange', 'gelatin'], ['sugar', 'orange', 'gelatin']]
+const q63 = [['garlic', 'salt', 'water', 'cheese'], ['salt', 'water', 'cheese'], ['milk', 'sugar', 'orange', 'gelatin'], ['sugar', 'orange', 'gelatin']];
 const a63 = q63.flat().reduce((uniqueItems, current) => {
   if (!(uniqueItems.includes(current))) {
     uniqueItems.push(current);
@@ -156,7 +156,7 @@ console.log("66.", a66);
 // ### 67. Parcel Weight Sum
 // Sum all weights of parcels recorded in a courier office.
 const q67 = [[22, 23], [25, 24, 22], [29]];
-const a67 = q67.flat().reduce((total, val) => total + val, 0)
+const a67 = q67.flat().reduce((total, val) => total + val, 0);
 console.log("67.", a67);
 
 // ### 68. Distinct Pizza Toppings
@@ -223,7 +223,7 @@ const a73 = q73.flat().reduce((uniqueDestinations, current) => {
     uniqueDestinations.push(current);
   }
   return uniqueDestinations;
-}, [])
+}, []);
 console.log("73.", a73);
 
 // ### 74. Instrument Practice Sum
@@ -249,13 +249,13 @@ const q75 = [
   ["Milk Thistle", "Dandelion",
     "Stinging Nettle",
     "Wild Garlic",]
-]
+];
 const a75 = q75.flat().reduce((uniquesSightings, current) => {
   if (!uniquesSightings.includes(current)) {
     uniquesSightings.push(current);
   }
   return uniquesSightings;
-}, [])
+}, []);
 console.log("75.", a75);
 
 // ### 76. Specific Sound Occurrence Count
@@ -275,8 +275,8 @@ const q77 = [
   ["paa", "mee", "koo", "too", "laa", "see"],
   ["a", "e", "i", "o", "u"],
   ["pata", "kapa", "maka", "taka", "sapala", "malata"]
-]
-const a77 = q77.flat().reduce((combined, syllable) => combined.concat(syllable), '')
+];
+const a77 = q77.flat().reduce((combined, syllable) => combined.concat(syllable), '');
 console.log("77.", a77);
 
 // ### 78. Zero Measurement Check
@@ -322,7 +322,7 @@ const a80 = q80.flat().reduce((groupedFreq, currentVal) => {
 
 
   return groupedFreq;
-}, [[], []])
+}, [[], []]);
 console.log("80.", a80);
 
 // ### 81. Reverse Instructions
@@ -331,7 +331,7 @@ const q81 = [['run', 'dig', 'peek'], ['dig', 'bury', 'cross'], ['choose', 'switc
 const a81 = q81.flat().reduce((reversed, current) => {
   reversed.unshift(current);
   return reversed;
-}, [])
+}, []);
 console.log("81.", a81);
 
 // ### 82. Journal Mention Count
@@ -355,13 +355,13 @@ const a84 = q84.flat().reduce((uniqueCharacters, current) => {
     uniqueCharacters.push(current);
   }
   return uniqueCharacters;
-}, [])
+}, []);
 console.log("84.", a84);
 
 // ### 85. Total Points Scored
 // Add up all points scored by a team across multiple games.
 const q85 = [[1, 2, 3], [2, 1, 0], [2, 1, 4]];
-const a85 = q85.flat().reduce((total, val) => total + val, 0)
+const a85 = q85.flat().reduce((total, val) => total + val, 0);
 console.log("85.", a85);
 
 // ### 86. Exact Score Check
@@ -384,7 +384,7 @@ const q88 = [
   ["Mint Chocolate", "Dark Chocolate", "Peppermint Chocolate"],
   ["Orange Chocolate", "Caramel Chocolate", "Dark Chocolate"],
   ["Praline Chocolate", "Hazelnut Chocolate", "White Chocolate"]
-]
+];
 const a88 = q88.flat().reduce((uniqueFlavors, current) => {
   if (!uniqueFlavors.includes(current)) {
     uniqueFlavors.push(current);
@@ -460,7 +460,7 @@ console.log("94.", a94);
 
 // ### 95. Reverse Chess Moves
 // Reverse a list of moves recorded during a chess game.
-const q95 = ['B', 'K', 'R', 'N']
+const q95 = ['B', 'K', 'R', 'N'];
 const a95 = q95.reduce((reverse, move) => { reverse.unshift(move); return reverse; }, []);
 console.log("95.", a95);
 
@@ -540,7 +540,6 @@ const q100 = [
   ["Oh oh", "Ha ha", "Hmm hmm", "La la"],
   ["Na na", "Da da", "La la", "Yeah yeah"]
 ];
-
 const a100 = q100.flat().reduce((distinct, current) => {
   if (!distinct.includes(current)) {
     distinct.push(current);
